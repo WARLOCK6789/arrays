@@ -1,0 +1,38 @@
+#include <iostream>
+#include <Windows.h>
+
+int main() {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    const int size{ 10 };
+    int sapermassiv[size]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int min = sapermassiv[0];
+    int max = sapermassiv[0];
+
+    std::cout << "Массив: ";
+
+    for (int element{}; element < size; ++element)
+    {
+        std::cout << sapermassiv[element] << '\t';
+    }
+    std::cout << std::endl;
+
+    for (int a = 1; a < size; ++a)
+    {
+        if (sapermassiv[a] < min)
+        {
+            min = sapermassiv[a];
+        }
+        if (sapermassiv[a] > max)
+        {
+            max = sapermassiv[a];
+        }
+    }  
+
+  
+    std::cout << "Минимальный элемент: " << min << std::endl;
+    std::cout << "Максимальный элемент: " << max << std::endl;
+
+    return EXIT_SUCCESS;
+}
