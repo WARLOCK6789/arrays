@@ -1,27 +1,15 @@
-
 #include <iostream>
 
 int main() {
-    
+    const int size{ 10 };
+    int supermassiv[size]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-    const int rows{ 1 };
-    const int columns{ 10 };
-    int integers[rows][columns]
-    {
-        { 1, 2, 3, 4, 5,  6, 7,  8,  9, 10},
-    
-    };
-
-
-    for (int row{}; row < rows; ++row)
-    {
-        for (int column{}; column < columns; ++column)
-        {
-            std::cout << integers[row][column] << '\t';
+    for (int a{}; a < size; ++a) {
+        std::cout << supermassiv[a];
+        if (a != size - 1) {
+            std::cout << ", ";
         }
-        std::cout << std::endl;
     }
-
 
     return EXIT_SUCCESS;
 }
