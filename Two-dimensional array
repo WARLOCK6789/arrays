@@ -1,0 +1,58 @@
+#include <iostream>
+#include <Windows.h>
+
+using namespace std;
+
+int main() {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    const int rows{ 3 };
+    const int columns{ 6 };
+    int sapermassiv[rows][columns] 
+    {
+        { 11, 12, 13, 14, 15, 16 },
+        { 17, 18, 19, 20, 21, 22 },
+        { 51, 52, 73, 94, 65, 36 }
+    };
+
+    cout << "Массив:" << endl;
+    for (int row{}; row < rows; ++row)
+    {
+        for (int column{}; column < columns; ++column)
+        {
+            cout << sapermassiv[row][column] << '\t';
+        }
+        cout << endl;
+    }
+
+    int min = sapermassiv[0][0];
+    int max = sapermassiv[0][0];
+
+    int minRow = 0, minCol = 0;
+    int maxRow = 0, maxCol = 0;
+
+    for (int row{}; row < rows; ++row)
+    {
+        for (int column{}; column < columns; ++column)
+        {
+            if (sapermassiv[row][column] < min)
+            {
+                min = sapermassiv[row][column];
+                minRow = row;      
+                minCol = column;   
+            }
+            if (sapermassiv[row][column] > max)
+            {
+                max = sapermassiv[row][column];
+                maxRow = row;      
+                maxCol = column;   
+            }
+        }
+    }
+
+    cout << "Индекс минимального элемента: " << minRow << " " << minCol << endl;
+    cout << "Индекс максимального элемента: " << maxRow << " " << maxCol << endl;
+
+    return EXIT_SUCCESS;
+}
